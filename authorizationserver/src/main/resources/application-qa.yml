@@ -1,0 +1,15 @@
+ACTIVE_PROFILE: qa
+PRIVATE_KEY: "private.key"
+PUBLIC_KEY: "public.key"
+
+MYSQL_USERNAME: root
+MYSQL_PASSWORD: J0hen314vs1
+MYSQL_HOST: localhost
+MYSQL_PORT: 3306
+MYSQL_DATABASE: authorization
+
+SERVER_PORT: 9888
+UI_APP_URL: http://localhost:3000
+
+USER_NAME: admin
+USER_PASSWORD: letmein
