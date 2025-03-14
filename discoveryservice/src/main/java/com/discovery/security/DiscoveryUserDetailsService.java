@@ -18,7 +18,8 @@ public class DiscoveryUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var user = userRepository.getUserByUsername(username);
-        return new User(user.getUsername(),
+        return new User(
+                user.getUsername(),
                 user.getPassword(),
                 user.isEnabled(),
                 user.isAccountNonExpired(),

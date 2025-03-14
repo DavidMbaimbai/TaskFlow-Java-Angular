@@ -4,23 +4,23 @@ spring:
   profiles:
     active: ${ACTIVE_PROFILE:dev}
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DATABASE}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     hikari:
       connection-test-query: SELECT 1
   jpa:
-    database: MYSQL
+    database: POSTGRESQL
     open-in-view: false
-    database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
+    database-platform: org.hibernate.dialect.PostgreSQL82Dialect
     generate-ddl: false
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        default_schema: ${MYSQL_DATABASE}
-        dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+        default_schema: ${POSTGRES_DATABASE}
+        dialect: rg.hibernate.dialect.PostgreSQL82Dialect
         format_sql: true
 
 eureka:

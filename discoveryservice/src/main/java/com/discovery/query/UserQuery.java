@@ -1,32 +1,8 @@
 package com.discovery.query;
 
 public class UserQuery {
-    public static final String SELECT_USER_BY_USER_UUID_QUERY =
-            """
-            SELECT * FROM users
-            """;
-    public static final String SELECT_USER_BY_EMAIL_QUERY =
-            """
-            SELECT * FROM email
-            """;
     public static final String SELECT_USER_BY_USERNAME_QUERY =
             """
-            SELECT * FROM email
-            """;
-    public static final String RESET_LOGIN_ATTEMPTS_QUERY =
-            """
-            SELECT * FROM email
-            """;
-    public static final String UPDATE_LOGIN_ATTEMPTS_QUERY =
-            """
-            SELECT * FROM email
-            """;
-    public static final String SET_LAST_LOGIN_QUERY =
-            """
-            SELECT * FROM email
-            """;
-    public static final String INSERT_NEW_DEVICE_QUERY =
-            """
-            SELECT * FROM email
+            SELECT r.name AS role, r.authority AS authorities, u.qr_code_image_uri,u.member_id, u.account_non_expired,u.account_non_locked,u.created_at,u.email,u.username, u.enabled,u.first_name,u.user_id,u.image_url,u.last_login,u.last_name,u.mfa,u.updated_at,u.user_uuid,u.bio,u.phone,u.address,c.password, c.updated_at + INTERVAL '90 days' > Now() AS credentials_non_expired FROM users u JOIN user_roles ur ON ur.user_id = u.user_id JOIN roles r ON r.role_id = ur.role_id JOIN credentials c ON c.user_id = u.user_id WHERE username = 'admin'    
             """;
 }
