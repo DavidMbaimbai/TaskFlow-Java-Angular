@@ -39,3 +39,8 @@ eureka:
     peer-node-read-timeout-ms: 3000
 server:
   port: ${SERVER_PORT}
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
