@@ -17,11 +17,8 @@ import static dev.samstevens.totp.util.Utils.getDataUriForImage;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static userservice.constant.Constants.TASK_FLOWER_LLC;
 public class UserUtils {
-
     public static Supplier<String> randomUUUID = () -> UUID.randomUUID().toString();
-
     public static Supplier<String> memberId = () -> randomNumeric(4) + "-" + randomNumeric(2) + "-" + randomNumeric(4);
-
     public static Function<String, QrData> qrDataFunction = qrCodeSecret -> new QrData.Builder()
             .issuer(TASK_FLOWER_LLC)
             .label(TASK_FLOWER_LLC)

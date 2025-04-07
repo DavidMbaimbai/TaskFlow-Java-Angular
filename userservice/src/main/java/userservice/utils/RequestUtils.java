@@ -27,7 +27,6 @@ import static org.apache.commons.lang3.exception.ExceptionUtils.getRootCauseMess
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class RequestUtils {
-
     private static final BiConsumer<HttpServletResponse, Response> writeResponse = (servletResponse, response) -> {
         try {
             var outputStream = servletResponse.getOutputStream();
