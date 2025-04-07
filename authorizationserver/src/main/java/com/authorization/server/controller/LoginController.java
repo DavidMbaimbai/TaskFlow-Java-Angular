@@ -30,7 +30,6 @@ import java.io.IOException;
 
 import static com.authorization.server.utils.RequestUtils.getMessage;
 import static com.authorization.server.utils.UserUtils.getUser;
-
 @Controller
 @AllArgsConstructor
 public class LoginController {
