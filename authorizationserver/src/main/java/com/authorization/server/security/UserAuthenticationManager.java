@@ -12,7 +12,7 @@ public class UserAuthenticationManager {
     private final UserAuthenticationProvider authenticationProvider;
 
     @Bean
-    public AuthenticationManager authenticationManager(){
-      return new ProviderManager(authenticationProvider);
+    public AuthenticationManager authenticationManager() {
+        return new ProviderManager(authenticationProvider);
     }
 }

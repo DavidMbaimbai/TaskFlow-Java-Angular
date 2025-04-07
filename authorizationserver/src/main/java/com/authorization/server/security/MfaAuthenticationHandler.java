@@ -1,7 +1,6 @@
 package com.authorization.server.security;
 
-import com.authorization.server.entity.MfaAuthentication;
-import com.authorization.server.entity.User;
+import com.authorization.server.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,22 +31,21 @@ public class MfaAuthenticationHandler implements AuthenticationSuccessHandler {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        if (authentication instanceof UsernamePasswordAuthenticationToken){
+        if(authentication instanceof UsernamePasswordAuthenticationToken) {
             var user = (User) authentication.getPrincipal();
-            if (!user.isMfa()){
-                mfaNotEnabled.onAuthenticationSuccess(request,response,authentication);
-                return;
+            if(!user.isMfa()) {
+                mfaNotEnabled.onAuthenticationSuccess(request, response, authentication);
+            } else {
+                saveAuthentication(request, response, new MfaAuthentication(authentication, authority));
+                authenticationSuccessHandler.onAuthenticationSuccess(request, response, authentication);
             }
         }
-        saveAuthentication(request, response, new MfaAuthentication(authentication,authority));
-        authenticationSuccessHandler.onAuthenticationSuccess(request,response,authentication);
-
     }
 
     private void saveAuthentication(HttpServletRequest request, HttpServletResponse response, MfaAuthentication authentication) {
         SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
         securityContext.setAuthentication(authentication);
         SecurityContextHolder.setContext(securityContext);
-        securityContextRepository.saveContext(securityContext, request,response);
+        securityContextRepository.saveContext(securityContext, request, response);
     }
 }

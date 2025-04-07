@@ -13,8 +13,9 @@ import static com.gateway.utils.RequestUtils.handleErrorResponse;
 
 @Component
 public class GatewayAuthenticationEntryPoint implements AuthenticationEntryPoint {
+
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        handleErrorResponse(request,response,exception);
+        handleErrorResponse(request, response, exception);
     }
 }

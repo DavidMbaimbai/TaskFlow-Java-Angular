@@ -1,5 +1,5 @@
 package com.discovery.repository;
-import com.discovery.entity.User;
+import com.discovery.model.User;
 public interface UserRepository {
     User getUserByUsername(String username);
 }

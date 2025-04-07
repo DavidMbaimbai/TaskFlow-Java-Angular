@@ -1,5 +1,6 @@
 package com.gateway.security;
 
+
 import com.gateway.handler.GatewayAccessDeniedHandler;
 import com.gateway.handler.GatewayAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
@@ -18,11 +19,17 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.springframework.http.HttpHeaders.*;
+import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS;
+import static org.springframework.http.HttpMethod.*;
+import static org.springframework.http.HttpMethod.OPTIONS;
 
-@Configuration
+
+
 @Slf4j
-@RequiredArgsConstructor
+@Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class ResourceServerConfig {
     @Value("${jwks.uri}")
     private String jwkSetUri;
@@ -31,28 +38,25 @@ public class ResourceServerConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user/register/**",
-                                "/user/verify/account/**",
-                                "/user/resetpassword/**",
-                                "/user/image/**",
-                                "/authorization/**").permitAll()
+                .authorizeHttpRequests( authorize -> authorize
+                        .requestMatchers("/user/register/**", "/user/verify/account/**", "/user/verify/password/**", "/user/resetpassword/**", "/user/image/**", "/authorization/**", "/.well-known/**").permitAll()
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .accessDeniedHandler(new GatewayAccessDeniedHandler())
                         .authenticationEntryPoint(new GatewayAuthenticationEntryPoint())
-                        .jwt(jwt->jwt.jwkSetUri(jwkSetUri)
+                        .jwt(jwt -> jwt.jwkSetUri(jwkSetUri)
                                 .jwtAuthenticationConverter(new JwtConverter())));
         return http.build();
     }
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         var corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(List.of("*"));
-        corsConfiguration.setAllowedHeaders(Arrays.asList("*"));
-        corsConfiguration.setExposedHeaders(Arrays.asList("*"));
-        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        corsConfiguration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:4200"));
+        corsConfiguration.setAllowedHeaders(Arrays.asList(ORIGIN, ACCESS_CONTROL_ALLOW_ORIGIN, CONTENT_TYPE, ACCEPT, AUTHORIZATION, "X-Requested-With", ACCESS_CONTROL_REQUEST_METHOD, ACCESS_CONTROL_REQUEST_HEADERS, ACCESS_CONTROL_ALLOW_CREDENTIALS));
+        corsConfiguration.setExposedHeaders(Arrays.asList(ORIGIN, ACCESS_CONTROL_ALLOW_ORIGIN, CONTENT_TYPE, ACCEPT, AUTHORIZATION, "X-Requested-With", ACCESS_CONTROL_REQUEST_METHOD, ACCESS_CONTROL_REQUEST_HEADERS, ACCESS_CONTROL_ALLOW_CREDENTIALS));
+        corsConfiguration.setAllowedMethods(Arrays.asList(GET.name(), POST.name(), PUT.name(), PATCH.name(), DELETE.name(), OPTIONS.name()));
         corsConfiguration.setMaxAge(3600L);
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration);

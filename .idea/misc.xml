@@ -7,6 +7,9 @@
         <option value="$PROJECT_DIR$/authorizationserver/pom.xml" />
         <option value="$PROJECT_DIR$/discoveryservice/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/notificationservice/pom.xml" />
+        <option value="$PROJECT_DIR$/ticketservice/pom.xml" />
+        <option value="$PROJECT_DIR$/userservice/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

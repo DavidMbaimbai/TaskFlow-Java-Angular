@@ -19,9 +19,9 @@ import java.time.Duration;
 
 import static java.util.UUID.randomUUID;
 
+@Slf4j
 @SpringBootApplication
 @EnableDiscoveryClient
-@Slf4j
 public class Application {
 	@Value("${ui.app.url}")
 	private String redirectUri;
@@ -30,36 +30,34 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 	@Bean
-	public ApplicationRunner runner(RegisteredClientRepository registeredClientRepository){
-		return  args->{
-			if (registeredClientRepository.findByClientId("client") == null){
-				try{
-					var registeredClient = RegisteredClient.withId(randomUUID().toString())
+	public ApplicationRunner runner(RegisteredClientRepository registeredClientRepository) {
+		return args -> {
+			RegisteredClient client = registeredClientRepository.findByClientId("client");
+			if(client == null) {
+				try {
+					var registerdClient = RegisteredClient.withId(randomUUID().toString())
 							.clientId("client").clientSecret("secret")
 							.clientAuthenticationMethod(ClientAuthenticationMethod.NONE)
-							.authorizationGrantTypes(types->{
-										types.add(AuthorizationGrantType.AUTHORIZATION_CODE);
-										types.add(AuthorizationGrantType.REFRESH_TOKEN);
-									}
-							)
-							.scopes(
-									scopes->{
+							.authorizationGrantTypes(types -> {
+								types.add(AuthorizationGrantType.AUTHORIZATION_CODE);
+								types.add(AuthorizationGrantType.REFRESH_TOKEN);
+							})
+							.scopes(scopes -> {
 										scopes.add(OidcScopes.OPENID);
 										scopes.add(OidcScopes.PROFILE);
 										scopes.add(OidcScopes.EMAIL);
 									}
 							)
 							.redirectUri(redirectUri)
-							.postLogoutRedirectUri("http://localhost:8080")
-							.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+							.postLogoutRedirectUri("http://127.0.0.1:8080")
+							.clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
 							.tokenSettings(TokenSettings.builder().refreshTokenTimeToLive(Duration.ofDays(90))
-									.refreshTokenTimeToLive(Duration.ofDays(1)).build()).build();
-					registeredClientRepository.save(registeredClient);
-				}catch (Exception exception){
+									.accessTokenTimeToLive(Duration.ofDays(1)).build()).build();
+					registeredClientRepository.save(registerdClient);
+				} catch (Exception exception) {
 					log.error(exception.getMessage());
 				}
 			}
-
 		};
 	}
 

@@ -10,11 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 
 @Configuration
 @RequiredArgsConstructor
@@ -22,14 +17,14 @@ public class JwtConfiguration {
     private final KeyUtils keyUtils;
 
     @Bean
-    public JwtDecoder jwtDecoder() throws JOSEException, NoSuchAlgorithmException, IOException, InvalidKeySpecException {
+    public JwtDecoder jwtDecoder() throws JOSEException {
         return NimbusJwtDecoder.withPublicKey(keyUtils.getRSAKeyPair().toRSAPublicKey()).build();
     }
 
     @Bean
-    public JWKSource<SecurityContext> jwkSource() throws NoSuchAlgorithmException, IOException, InvalidKeySpecException {
-        RSAKey rsaKey = keyUtils.getRSAKeyPair();
-        JWKSet set = new JWKSet(rsaKey);
+    public JWKSource<SecurityContext> jwkSource() {
+        RSAKey rSaKey = keyUtils.getRSAKeyPair();
+        JWKSet set = new JWKSet(rSaKey);
         return (j, sc) -> j.select(set);
     }
 }

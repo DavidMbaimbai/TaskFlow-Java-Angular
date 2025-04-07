@@ -20,7 +20,7 @@ spring:
     properties:
       hibernate:
         default_schema: ${POSTGRES_DATABASE}
-        dialect: rg.hibernate.dialect.PostgreSQL82Dialect
+        dialect: org.hibernate.dialect.PostgreSQL82Dialect
         format_sql: true
 
 eureka:
@@ -29,18 +29,15 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      defaultZone: http://${USER_NAME}:${USER_PASSWORD}@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${USER_NAME}:${PASSWORD}@${eureka.instance.hostname}:${server.port}/eureka/
     fetch-registry: false
     register-with-eureka: false
   server:
+    expected-client-renewal-interval-seconds: 10
     enable-self-preservation: false
     renewal-percent-threshold: 0.33
     wait-time-in-ms-when-sync-empty: 0
-    peer-node-read-timeout-ms: 3000
+    peer-node-read-timeout-ms: 30000
+
 server:
   port: ${SERVER_PORT}
-logging:
-  level:
-    org:
-      springframework:
-        security: DEBUG

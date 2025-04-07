@@ -15,7 +15,7 @@ spring:
   jpa:
     database: POSTGRESQL
     open-in-view: false
-    database-platform: org.hibernate.dialect.PostgreSQL82Dialect
+    #database-platform: org.hibernate.dialect.PosgreSQLInnoDBDialect
     generate-ddl: false
     show-sql: true
     hibernate:
@@ -23,7 +23,7 @@ spring:
     properties:
       hibernate:
         default_schema: ${POSTGRES_DATABASE}
-        dialect: rg.hibernate.dialect.PostgreSQL82Dialect
+        #dialect: org.hibernate.dialect.PosgreSQLInnoDBDialect
         format_sql: true
 
 eureka:
@@ -31,10 +31,16 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${USER_NAME}:${USER_PASSWORD}@localhost:5002/eureka/
+      defaultZone: http://${USER_NAME}:${PASSWORD}@localhost:5002/eureka/
+
+#server:
+#  servlet:
+#    context-path: /authorization
+
 ui:
   app:
     url: ${UI_APP_URL}
+
 keys:
   private: ${PRIVATE_KEY}
   public: ${PUBLIC_KEY}

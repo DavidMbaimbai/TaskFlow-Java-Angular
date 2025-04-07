@@ -4,8 +4,8 @@ import nl.basjes.parse.useragent.UserAgentAnalyzer;
 
 public class Analyzer {
     private static UserAgentAnalyzer INSTANCE;
-    public static UserAgentAnalyzer getInstance(){
-        if (INSTANCE == null){
+    public static UserAgentAnalyzer getInstance() {
+        if(INSTANCE == null) {
             INSTANCE = UserAgentAnalyzer
                     .newBuilder()
                     .hideMatcherLoadStats()

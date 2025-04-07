@@ -1,6 +1,5 @@
 package com.authorization.server.repository;
-
-import com.authorization.server.entity.User;
+import com.authorization.server.model.User;
 
 public interface UserRepository {
     User getUserByUuid(String userUuid);

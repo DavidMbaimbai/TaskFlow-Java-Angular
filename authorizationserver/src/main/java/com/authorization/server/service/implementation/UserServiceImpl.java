@@ -1,12 +1,11 @@
 package com.authorization.server.service.implementation;
 
-import com.authorization.server.entity.User;
+import com.authorization.server.model.User;
 import com.authorization.server.repository.UserRepository;
 import com.authorization.server.service.UserService;
 import com.authorization.server.utils.UserUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -14,7 +13,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByEmail(String email) {
-
         return userRepository.getUserByEmail(email);
     }
 
@@ -36,7 +34,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addLoginDevice(Long userId, String deviceName, String client, String ipAddress) {
         userRepository.addLoginDevice(userId, deviceName, client, ipAddress);
-
     }
 
     @Override

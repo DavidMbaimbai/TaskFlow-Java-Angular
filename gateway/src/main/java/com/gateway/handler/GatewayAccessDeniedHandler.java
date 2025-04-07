@@ -11,10 +11,12 @@ import java.io.IOException;
 
 import static com.gateway.utils.RequestUtils.handleErrorResponse;
 
+
 @Component
 public class GatewayAccessDeniedHandler implements AccessDeniedHandler {
+
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException exception) throws IOException, ServletException {
-        handleErrorResponse(request,response,exception);
+        handleErrorResponse(request, response, exception);
     }
 }
