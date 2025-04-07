@@ -1,11 +1,8 @@
 package ticketservice.event;
-
 import lombok.*;
 import ticketservice.enumeration.EventType;
 
 import java.util.Map;
-
-
 @Builder
 @Getter
 @Setter

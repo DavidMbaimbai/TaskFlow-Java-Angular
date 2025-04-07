@@ -20,8 +20,6 @@ import java.util.List;
 
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpMethod.*;
-
-
 @Slf4j
 @Configuration
 @EnableWebSecurity

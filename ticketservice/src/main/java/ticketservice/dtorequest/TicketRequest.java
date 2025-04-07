@@ -1,8 +1,5 @@
 package ticketservice.dtorequest;
-
 import lombok.*;
-
-
 @Getter
 @Setter
 @Builder

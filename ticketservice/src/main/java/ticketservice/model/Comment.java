@@ -1,8 +1,5 @@
 package ticketservice.model;
-
 import lombok.*;
-
-
 @Getter
 @Setter
 @ToString

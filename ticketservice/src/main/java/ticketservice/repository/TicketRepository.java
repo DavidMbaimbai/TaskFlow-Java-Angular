@@ -1,13 +1,10 @@
 package ticketservice.repository;
-
 import ticketservice.model.Attachment;
 import ticketservice.model.Comment;
 import ticketservice.model.Task;
 import ticketservice.model.Ticket;
 
 import java.util.List;
-
-
 public interface TicketRepository {
     List<Ticket> getTickets(String userUuid, int page, int size, String status, String type, String filter);
     List<Ticket> getUserTickets(String userUuid, int page, int size, String status, String type, String filter);

@@ -1,6 +1,4 @@
 package ticketservice.query;
-
-
 public class TicketQuery {
     public static final String SELECT_TICKETS_QUERY =
                                """

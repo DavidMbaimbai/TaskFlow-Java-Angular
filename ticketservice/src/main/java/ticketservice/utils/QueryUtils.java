@@ -4,7 +4,6 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.replace;
 import static ticketservice.query.TicketQuery.*;
 public class QueryUtils {
-
     public static String createSelectTicketsQuery(String status, String type, String filter) {
         var query = getStringBuilder(SELECT_TICKETS_QUERY);
         if(isNotBlank(status)) {

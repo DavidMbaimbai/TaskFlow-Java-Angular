@@ -1,5 +1,4 @@
 package ticketservice.repository.implementation;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -20,8 +19,6 @@ import static java.util.Map.of;
 import static ticketservice.query.TicketQuery.*;
 import static ticketservice.utils.QueryUtils.*;
 import static ticketservice.utils.TicketUtils.randomUUID;
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor

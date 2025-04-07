@@ -1,5 +1,4 @@
 package ticketservice.service.implementation;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.security.access.AccessDeniedException;
@@ -14,8 +13,6 @@ import ticketservice.service.UserService;
 import java.util.List;
 
 import static ticketservice.utils.RequestUtils.convertResponse;
-
-
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {

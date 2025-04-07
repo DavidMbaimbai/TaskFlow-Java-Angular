@@ -1,5 +1,4 @@
 package ticketservice.service.implementation;
-
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -59,8 +58,6 @@ import static ticketservice.constant.Constants.PHOTO_DIRECTORY;
 import static ticketservice.utils.DateFormatter.*;
 import static ticketservice.utils.TicketUtils.getFileUri;
 import static ticketservice.utils.UserUtils.hasElevatedPermissions;
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor

@@ -1,5 +1,4 @@
 package ticketservice.service;
-
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.multipart.MultipartFile;
 import ticketservice.model.Attachment;
@@ -9,8 +8,6 @@ import ticketservice.model.Ticket;
 
 import java.nio.file.Path;
 import java.util.List;
-
-
 public interface TicketService {
     List<Ticket> getTickets(String userUuid, int page, int size, String status, String type, String filter);
     int getPages(String userUuid, int page, int size, String status, String type, String filter);

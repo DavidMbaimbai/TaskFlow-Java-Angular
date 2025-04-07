@@ -1,9 +1,7 @@
 package ticketservice.utils;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
 public class DateFormatter {
     public static final String DATE_FORMATTER = "yyyy-MM-dd hh:mm:ss";
 

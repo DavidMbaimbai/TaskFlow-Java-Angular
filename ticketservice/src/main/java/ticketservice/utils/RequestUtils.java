@@ -1,5 +1,4 @@
 package ticketservice.utils;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +20,6 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.apache.commons.lang3.exception.ExceptionUtils.getRootCauseMessage;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
 public class RequestUtils {
 
     private static final BiConsumer<HttpServletResponse, Response> writeResponse = (servletResponse, response) -> {

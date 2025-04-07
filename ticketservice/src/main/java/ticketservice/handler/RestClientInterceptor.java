@@ -1,5 +1,4 @@
 package ticketservice.handler;
-
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
@@ -13,8 +12,6 @@ import ticketservice.exception.ApiException;
 import java.io.IOException;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
-
-
 @Component
 public class RestClientInterceptor implements ClientHttpRequestInterceptor {
 

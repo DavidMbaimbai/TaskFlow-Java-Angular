@@ -1,5 +1,4 @@
 package ticketservice.resource;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
@@ -33,8 +32,6 @@ import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.http.ResponseEntity.ok;
 import static ticketservice.constant.Constants.FILE_NAME_HEADER;
 import static ticketservice.utils.RequestUtils.getResponse;
-
-
 @RestController
 @AllArgsConstructor
 @RequestMapping("/ticket")
