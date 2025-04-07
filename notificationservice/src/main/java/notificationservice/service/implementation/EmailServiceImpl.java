@@ -1,6 +1,4 @@
 package notificationservice.service.implementation;
-
-
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +16,10 @@ import java.util.Date;
 import java.util.Map;
 
 import static notificationservice.utils.NotificationUtils.*;
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
-
     public static final String NEW_USER_ACCOUNT_VERIFICATION = "New Account Verification";
     public static final String UTF_8_ENCODING = "UTF-8";
     public static final String ACCOUNT_VERIFICATION_TEMPLATE = "newaccount";

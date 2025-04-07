@@ -1,5 +1,4 @@
 package notificationservice.handler;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 import static notificationservice.utils.RequestUtils.handleErrorResponse;
-
-
 @Component
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 

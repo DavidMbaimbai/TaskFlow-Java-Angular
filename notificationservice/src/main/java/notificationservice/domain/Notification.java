@@ -1,6 +1,4 @@
 package notificationservice.domain;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,9 +10,6 @@ import org.springframework.util.ObjectUtils;
 
 import java.io.Serializable;
 import java.util.Map;
-
-
-
 @Builder
 @Getter
 @Setter

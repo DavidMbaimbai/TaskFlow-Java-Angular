@@ -1,5 +1,4 @@
 package notificationservice.query;
-
 public class MessageQuery {
     public static final String CREATE_MESSAGE_FUNCTION =
                                """

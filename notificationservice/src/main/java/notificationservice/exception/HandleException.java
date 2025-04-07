@@ -1,5 +1,4 @@
 package notificationservice.exception;
-
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,9 +34,6 @@ import java.util.stream.Collectors;
 import static notificationservice.utils.RequestUtils.handleErrorResponse;
 import static org.apache.commons.lang3.exception.ExceptionUtils.getRootCauseMessage;
 import static org.springframework.http.HttpStatus.*;
-
-
-
 @RestControllerAdvice
 @RequiredArgsConstructor
 @Slf4j

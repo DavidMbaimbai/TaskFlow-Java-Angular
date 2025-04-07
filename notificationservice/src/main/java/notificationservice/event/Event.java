@@ -1,6 +1,4 @@
 package notificationservice.event;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,9 +7,6 @@ import lombok.Setter;
 import notificationservice.enumeration.EventType;
 
 import java.util.Map;
-
-
-
 @Builder
 @Getter
 @Setter

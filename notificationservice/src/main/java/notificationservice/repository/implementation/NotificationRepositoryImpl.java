@@ -1,6 +1,4 @@
 package notificationservice.repository.implementation;
-
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import notificationservice.exception.ApiException;
@@ -16,14 +14,11 @@ import java.util.List;
 import static java.util.Map.of;
 import static notificationservice.query.MessageQuery.*;
 import static notificationservice.utils.NotificationUtils.randomUUID;
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class NotificationRepositoryImpl implements NotificationRepository {
     private final JdbcClient jdbc;
-
     @Override
     public Message sendMessage(String fromUserUuid, String toEmail, String subject, String message) {
         try {

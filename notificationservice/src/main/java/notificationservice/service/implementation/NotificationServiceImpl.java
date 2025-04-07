@@ -6,18 +6,13 @@ import notificationservice.model.Message;
 import notificationservice.repository.NotificationRepository;
 import notificationservice.service.NotificationService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Objects;
-
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class NotificationServiceImpl implements NotificationService {
     private final NotificationRepository notificationRepository;
-
     @Override
     public Message sendMessage(String fromUserUuid, String toEmail, String subject, String message) {
         return notificationRepository.sendMessage(fromUserUuid, toEmail, subject, message);

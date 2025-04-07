@@ -20,7 +20,6 @@ import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKN
 public class NotificationListener {
     private static final String NOTIFICATION_TOPIC = "NOTIFICATION_TOPIC";
     private final EmailService emailService;
-
     @KafkaListener(topics = NOTIFICATION_TOPIC)
     public void handleNotification(Notification notification) {
         log.info("Received notification: {}", notification.toString());

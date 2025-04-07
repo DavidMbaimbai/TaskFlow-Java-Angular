@@ -1,7 +1,4 @@
 package notificationservice.resource;
-
-
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -25,9 +22,6 @@ import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.http.ResponseEntity.ok;
-
-
-
 @RestController
 @AllArgsConstructor
 @RequestMapping("/notification")
