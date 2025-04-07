@@ -1,6 +1,4 @@
 package ticketservice.constant;
-
-
 public class Roles {
     // Roles
     public static final String USER = "USER";
