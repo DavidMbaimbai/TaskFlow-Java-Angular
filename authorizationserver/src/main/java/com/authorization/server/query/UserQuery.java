@@ -1,5 +1,4 @@
 package com.authorization.server.query;
-
 public class UserQuery {
     public static final String SELECT_USER_BY_USER_UUID_QUERY =
                                """

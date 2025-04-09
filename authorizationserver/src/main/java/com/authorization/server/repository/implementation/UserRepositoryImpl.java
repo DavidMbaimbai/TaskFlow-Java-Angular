@@ -1,5 +1,4 @@
 package com.authorization.server.repository.implementation;
-
 import com.authorization.server.exception.ApiException;
 import com.authorization.server.model.User;
 import com.authorization.server.repository.UserRepository;

@@ -1,5 +1,4 @@
 package com.discovery.constants;
-
 public class Roles {
     //Roles
     public static final String USER = "USER";

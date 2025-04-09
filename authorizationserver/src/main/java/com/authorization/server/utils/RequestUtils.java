@@ -1,9 +1,7 @@
 package com.authorization.server.utils;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
-
 public class RequestUtils {
 
     public static String getMessage(HttpServletRequest request) {

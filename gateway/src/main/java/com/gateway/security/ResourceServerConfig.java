@@ -1,6 +1,4 @@
 package com.gateway.security;
-
-
 import com.gateway.handler.GatewayAccessDeniedHandler;
 import com.gateway.handler.GatewayAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
@@ -23,9 +21,6 @@ import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS;
 import static org.springframework.http.HttpMethod.*;
 import static org.springframework.http.HttpMethod.OPTIONS;
-
-
-
 @Slf4j
 @Configuration
 @EnableWebSecurity

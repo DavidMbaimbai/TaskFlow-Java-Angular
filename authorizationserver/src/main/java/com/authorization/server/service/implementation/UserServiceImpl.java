@@ -1,5 +1,4 @@
 package com.authorization.server.service.implementation;
-
 import com.authorization.server.model.User;
 import com.authorization.server.repository.UserRepository;
 import com.authorization.server.service.UserService;

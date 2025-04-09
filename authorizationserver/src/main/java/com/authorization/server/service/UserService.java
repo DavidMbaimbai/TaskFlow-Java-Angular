@@ -1,7 +1,5 @@
 package com.authorization.server.service;
-
 import com.authorization.server.model.User;
-
 public interface UserService {
     User getUserByEmail(String email);
     void resetLoginAttempts(String userUuid);

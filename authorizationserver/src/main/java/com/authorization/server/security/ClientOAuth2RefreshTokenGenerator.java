@@ -1,5 +1,4 @@
 package com.authorization.server.security;
-
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.keygen.Base64StringKeyGenerator;
 import org.springframework.security.crypto.keygen.StringKeyGenerator;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.util.Base64;
-
 @Component
 @NoArgsConstructor
 public class ClientOAuth2RefreshTokenGenerator implements OAuth2TokenGenerator<OAuth2RefreshToken> {

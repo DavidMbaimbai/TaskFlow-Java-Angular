@@ -1,6 +1,4 @@
 package com.discovery.security;
-
-
 import com.discovery.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;
@@ -10,9 +8,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import static org.springframework.security.core.authority.AuthorityUtils.commaSeparatedStringToAuthorityList;
-
-
-
 @Service
 @AllArgsConstructor
 public class DiscoveryUserDetailsService implements UserDetailsService {

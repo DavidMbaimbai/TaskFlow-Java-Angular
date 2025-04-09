@@ -9,8 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 
 import static com.discovery.constants.Roles.APP_READ;
-
-
 @Slf4j
 @Configuration
 @EnableWebSecurity

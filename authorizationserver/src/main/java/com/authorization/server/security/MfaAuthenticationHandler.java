@@ -1,5 +1,4 @@
 package com.authorization.server.security;
-
 import com.authorization.server.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.security.web.context.SecurityContextRepository;
 
 import java.io.IOException;
-
 public class MfaAuthenticationHandler implements AuthenticationSuccessHandler {
     private final SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
     private final AuthenticationSuccessHandler mfaNotEnabled = new SavedRequestAwareAuthenticationSuccessHandler();

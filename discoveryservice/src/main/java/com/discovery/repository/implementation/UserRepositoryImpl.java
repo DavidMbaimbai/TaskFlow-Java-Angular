@@ -9,8 +9,6 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Service;
 
 import static com.discovery.query.UserQuery.SELECT_USER_BY_USERNAME_QUERY;
-
-
 @Slf4j
 @Service
 @RequiredArgsConstructor

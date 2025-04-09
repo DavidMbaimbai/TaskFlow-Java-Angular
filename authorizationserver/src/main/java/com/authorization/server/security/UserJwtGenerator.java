@@ -1,5 +1,4 @@
 package com.authorization.server.security;
-
 import org.springframework.lang.Nullable;
 import org.springframework.security.core.session.SessionInformation;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;

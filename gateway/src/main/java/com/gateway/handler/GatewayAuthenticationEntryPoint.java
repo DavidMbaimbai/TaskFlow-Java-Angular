@@ -1,5 +1,4 @@
 package com.gateway.handler;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 import static com.gateway.utils.RequestUtils.handleErrorResponse;
-
 @Component
 public class GatewayAuthenticationEntryPoint implements AuthenticationEntryPoint {
 

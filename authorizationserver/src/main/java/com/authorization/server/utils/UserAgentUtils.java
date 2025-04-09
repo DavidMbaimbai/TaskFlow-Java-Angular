@@ -1,9 +1,7 @@
 package com.authorization.server.utils;
-
 import com.authorization.server.domain.Analyzer;
 import jakarta.servlet.http.HttpServletRequest;
 import nl.basjes.parse.useragent.UserAgent;
-
 public class UserAgentUtils {
     private static final String USER_AGENT_HEADER = "user-agent";
     private static final String X_FORWARDED_FOR_HEADER = "X-FORWARDED-FOR";

@@ -1,5 +1,4 @@
 package com.authorization.server;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
@@ -18,7 +17,6 @@ import org.springframework.security.oauth2.server.authorization.settings.TokenSe
 import java.time.Duration;
 
 import static java.util.UUID.randomUUID;
-
 @Slf4j
 @SpringBootApplication
 @EnableDiscoveryClient

@@ -18,7 +18,6 @@ import java.util.function.Consumer;
 
 import static org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated;
 import static org.springframework.security.core.authority.AuthorityUtils.commaSeparatedStringToAuthorityList;
-
 @Component
 @RequiredArgsConstructor
 public class UserAuthenticationProvider implements AuthenticationProvider {

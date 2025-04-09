@@ -9,7 +9,6 @@ import dev.samstevens.totp.time.TimeProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.server.authorization.authentication.OAuth2AuthorizationCodeRequestAuthenticationToken;
-
 public class UserUtils {
     public static boolean verifyQrCode(String secret, String code) {
         TimeProvider timeProvider = new SystemTimeProvider();
